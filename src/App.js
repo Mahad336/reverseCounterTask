@@ -25,6 +25,13 @@ function App() {
     setStatus(0);
     return setTime({ m: 10, s: 0, ms: 0 });
   };
+  const autoReset = () => {
+    if (time.m === 0 && time.s === 0 && time.ms === 99) {
+      return reset();
+    }
+  };
+
+  autoReset();
 
   var updatedM = time.m;
   var updatedS = time.s;
